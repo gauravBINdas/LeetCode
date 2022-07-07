@@ -23,7 +23,6 @@ class Solution {
         int n=matrix[m-1].length;
         dp=new int[m+1][n+1];
         int side=maxArea(matrix,m,n);
-        System.out.println(Arrays.deepToString(dp));
         return side*side;
     }
 }
