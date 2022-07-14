@@ -16,7 +16,7 @@
 class Solution {
     private int inorder[],preorder[];
     private int pStart=0;
-    public TreeNode buildingTree(int iStart,int iEnd)
+    private TreeNode buildingTree(int iStart,int iEnd)
     {
         TreeNode node=null;
         if(iStart<=iEnd){
@@ -28,9 +28,7 @@ class Solution {
             if(inorder[i]==root)
                 break;
         }
-       // System.out.println(iStart+","+(i-1)+","+(pStart+1));
         node.left=buildingTree(iStart,i-1);
-        //System.out.println((i+1)+","+iEnd+","+(pStart+1));
         node.right=buildingTree(i+1,iEnd);
         }
         return node;
