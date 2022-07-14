@@ -55,7 +55,7 @@ class Solution {
         if(iStart<=iEnd){
         int root=preorder[pStart++];
         node=new TreeNode(root);
-        int i=map.get(root);
+        int i;
         // for(i=iStart;i<=iEnd;i++)
         // {
         //     if(inorder[i]==root)
@@ -63,7 +63,7 @@ class Solution {
         // }
         // Worst case Time Complexity: O(n*2^n)
         // Using Map to reduce it further to O(2^n).
-        
+        i=map.get(root);
         node.left=buildingTree(iStart,i-1);
         node.right=buildingTree(i+1,iEnd);
         }
