@@ -48,18 +48,22 @@
 class Solution {
     private int inorder[],preorder[];
     private int pStart=0;
+    private Map<Integer,Integer> map;
     private TreeNode buildingTree(int iStart,int iEnd)
     {
         TreeNode node=null;
         if(iStart<=iEnd){
         int root=preorder[pStart++];
         node=new TreeNode(root);
-        int i;
-        for(i=iStart;i<=iEnd;i++)
-        {
-            if(inorder[i]==root)
-                break;
-        }
+        int i=map.get(root);
+        // for(i=iStart;i<=iEnd;i++)
+        // {
+        //     if(inorder[i]==root)
+        //         break;
+        // }
+        // Worst case Time Complexity: O(n*2^n)
+        // Using Map to reduce it further to O(2^n).
+        
         node.left=buildingTree(iStart,i-1);
         node.right=buildingTree(i+1,iEnd);
         }
@@ -68,6 +72,10 @@ class Solution {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
        this.inorder=inorder;
        this.preorder=preorder;
+       map=new HashMap<>();
+       for(int i=0;i<inorder.length;i++)
+           map.put(inorder[i],i);
+        
        return buildingTree(0,inorder.length-1);
     }
 }
