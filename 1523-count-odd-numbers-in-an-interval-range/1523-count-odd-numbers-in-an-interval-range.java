@@ -3,7 +3,7 @@ class Solution {
         interface Range{
             public int countOddTillRange(int val);
         }
-        Range range=(val)->{return val>=0?val/2+val%2:0;};
+        Range range=(val)->(val>=0)? val/2+val%2 : 0;
        
         int countOddTillLow=range.countOddTillRange(low-1);
         int countOddTillHigh=range.countOddTillRange(high);
