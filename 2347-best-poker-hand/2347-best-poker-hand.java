@@ -2,9 +2,8 @@ class Solution {
     public String bestHand(int[] ranks, char[] suits) {
         String hands="High Card";
         boolean isFlush=true;
-        int i;
         char card=suits[0];
-        for( i=0;i<ranks.length;i++)
+        for( int i=0;i<ranks.length;i++)
         {
             if(suits[i]!=card)
                 isFlush=false;
