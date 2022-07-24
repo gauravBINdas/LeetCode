@@ -2,10 +2,11 @@ class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
         int m=matrix.length-1;
         int n=matrix[0].length-1;
-        int start=0;
-        int end=m;
-        int mid=0;
+        int start,end,mid;
+        
         //find row
+        start=0;
+        end=m;
         while(start<=end)
         {
             mid=(start+end)/2;
@@ -20,11 +21,10 @@ class Solution {
         }
         
         int row=(end>=0)?end:0;
-        System.out.println(row);
+        
         //find col
         start=0;
         end=n;
-        
         while(start<=end)
         {
             mid=(start+end)/2;
