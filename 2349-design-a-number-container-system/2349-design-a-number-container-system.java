@@ -38,6 +38,7 @@ class NumberContainers {
     
     public void change(int index, int number) {
         TreeSet<Integer> set;
+        int another=-1;
         if(!map.containsKey(number))
         {
             //insert
@@ -53,9 +54,11 @@ class NumberContainers {
         }
         //System.out.println(set);
         //need to remove the index from another number
-        if(map1.get(index)!=null&&map1.get(index)!=number)
+        if(map1.containsKey(index))
+            another=map1.get(index);
+        if(another>=1 && another!=number)
         {
-            set=map.get(map1.get(index));
+            set=map.get(another);
             set.remove(index);
            // System.out.println(map1.get(index)+":"+set);
         }
