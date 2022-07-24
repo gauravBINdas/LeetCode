@@ -3,32 +3,6 @@
    Author: TLE se pareshan aatma
 */
 class NumberContainers {
-//     private Map<Integer,Integer> map;
-//     public NumberContainers() {
-//         map=new HashMap<>();
-//         dp= new HashMap<>();
-//     }
-    
-//     public void change(int index, int number) {
-//         isChange=true;
-//         map.put(index,number);
-//     }
-    
-//     public int find(int number) {
-//         int curr_val;
-//         int curr_index;
-//         int min=Integer.MAX_VALUE;
-//         for(Map.Entry e:map.entrySet())
-//         {
-//             curr_val=(int)e.getValue();
-//             curr_index=(int)e.getKey();
-//             if(curr_val==number)
-//             {
-//                 min=Math.min(curr_index,min);
-//             }
-//         }
-//         return (min==Integer.MAX_VALUE)?-1:min;
-//     }
     private Map<Integer,TreeSet> map;
     private Map<Integer,Integer> map1;
     public NumberContainers() {
@@ -52,7 +26,6 @@ class NumberContainers {
             set=map.get(number);
             set.add(index);
         }
-        //System.out.println(set);
         //need to remove the index from another number
         if(map1.containsKey(index))
             another=map1.get(index);
@@ -60,7 +33,6 @@ class NumberContainers {
         {
             set=map.get(another);
             set.remove(index);
-           // System.out.println(map1.get(index)+":"+set);
         }
         map1.put(index,number);
     }
