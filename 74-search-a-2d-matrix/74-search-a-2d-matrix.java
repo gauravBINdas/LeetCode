@@ -5,7 +5,6 @@ class Solution {
         int start=0;
         int end=m;
         int mid=0;
-        try{
         //find row
         while(start<=end)
         {
@@ -20,7 +19,7 @@ class Solution {
             }
         }
         
-        int row=end;
+        int row=(end>=0)?end:0;
         System.out.println(row);
         //find col
         start=0;
@@ -38,9 +37,6 @@ class Solution {
                 return true;
             }
         }
-       
-        }catch(Exception e)
-        {}
          return false;
     }
 }
