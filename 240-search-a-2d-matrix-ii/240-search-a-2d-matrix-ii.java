@@ -18,7 +18,7 @@ class Solution {
                 break;
             }
             if(row<=m && col>=0)
-            pivot=matrix[row][col];
+                 pivot=matrix[row][col];
         }
         return res;
     }
