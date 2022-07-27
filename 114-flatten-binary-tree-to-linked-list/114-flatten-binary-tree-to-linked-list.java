@@ -20,9 +20,9 @@ class Solution {
         TreeNode Left=root.left;
         TreeNode Right=root.right;
         root.left=null;
-        flatten(Left);
+    
         flatten(Right);
-        
+            flatten(Left);
         root.right=Left;
         TreeNode curr=root;
         while(curr.right!=null)
