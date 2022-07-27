@@ -1,3 +1,9 @@
+/*
+  Author: Chullu bhar paani laa de bhai. 
+  Logic: String k shaktiyon ka galat istemal kiya hai maine
+  
+  Kone me rota hua coder
+*/
 class Solution {
     private char chars[];
     private List<String> wordDict;
