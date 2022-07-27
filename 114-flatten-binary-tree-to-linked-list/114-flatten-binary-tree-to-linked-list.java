@@ -21,12 +21,17 @@ class Solution {
         TreeNode Right=root.right;
         root.left=null;
     
+        flatten(Left);
         flatten(Right);
-            flatten(Left);
+        
         root.right=Left;
+        
         TreeNode curr=root;
         while(curr.right!=null)
+        {
             curr=curr.right;
+        }
+        
         curr.right=Right;
     }
 }
