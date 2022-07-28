@@ -1,5 +1,6 @@
 class Solution {
-    public int romanToInt(String s) {
+    private Map<Character,Integer> init()
+    {
         int val[]={1000,500,100,50,10,5,1};
         char roman[]={'M','D','C','L','X','V','I'};
         Map<Character,Integer> map=new HashMap<>();
@@ -7,8 +8,11 @@ class Solution {
         {
             map.put(roman[i],val[i]);
         }
-        
-        
+        return map;
+    }
+    
+    public int romanToInt(String s) {
+        Map<Character,Integer> map=init();
         int num=0;
         int prev=0;
         for(int i=0;i<s.length();i++)
