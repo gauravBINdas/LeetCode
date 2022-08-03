@@ -12,7 +12,7 @@ class MyCalendar {
         boolean isValid=true;
         for(int i=0;i<bookedEventCount;i++)
         {
-            if(start<bookedEndList.get(i)&&bookedStartList.get(i)<end)
+            if(start<bookedEndList.get(i)&&bookedStartList.get(i)<end)//If crosses each other then false
             {
                 isValid=false;
                 break;
