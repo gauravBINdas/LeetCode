@@ -1,6 +1,11 @@
 class Solution {
+    private interface Num
+    {
+        boolean isEven(int num);
+    }
     public int mirrorReflection(int p, int q) {
         int m=1,n=0;
+        Num num=(i)->(i&1)==0;
         while(m*p!=n*q)
         {
             if(n*q>m*p)
@@ -12,15 +17,15 @@ class Solution {
                 n++;
             }
         }
-        if((m&1)!=0&&(n&1)!=0)
+        if(!num.isEven(m)&&!num.isEven(n))
         {
             return 1;
         }
-        else if((m&1)!=0&&(n&1)==0)
+        else if(!num.isEven(m)&&num.isEven(n))
         {
             return 2;
         }
-        else if((m&1)==0&&(n&1)!=0)
+        else if(num.isEven(m)&&!num.isEven(n))
         {
             return 0;
         }
