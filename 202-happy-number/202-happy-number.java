@@ -13,12 +13,12 @@ class Solution {
      public boolean isHappy(int n) {
         int turtle=n;
         int rabit=next(next(n));
-        
-        while(rabit!=1 && turtle!=rabit)
+        int end=1;
+        while(rabit!=end && turtle!=rabit)
         {
             turtle=next(turtle);
             rabit=next(next(rabit));
         }
-        return rabit==1;
+        return rabit==end;
     }
 }
