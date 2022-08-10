@@ -11,20 +11,17 @@ class Solution {
     }
     private int dfs(int row,int col)
     {
-        if(isRange(row,col)&&!visited[row][col]){
-            if(grid[row][col]=='1')
-            {
-                visited[row][col]=true;
-                dfs(row,col+1);
-                dfs(row+1,col);
-                dfs(row,col-1);
-                dfs(row-1,col);
-                
-            }
-            return 1;
+        int count=0;
+        if(isRange(row,col)&&!visited[row][col] && grid[row][col]=='1')
+        {
+            visited[row][col]=true;
+            dfs(row,col+1);
+            dfs(row+1,col);
+            dfs(row,col-1);
+            dfs(row-1,col);
+            count=1;
         }
-        else
-            return 0;
+        return count;
     }
     public int numIslands(char[][] grid) {
         int sum=0;
