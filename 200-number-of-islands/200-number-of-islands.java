@@ -34,7 +34,7 @@ class Solution {
         {
             for(int j=0;j<grid[i].length;j++)
             {
-                   if(grid[i][j]=='1')
+                   if(!visited[i][j]&&grid[i][j]=='1')
                    {
                         sum=sum+dfs(i,j);
                       //  System.out.println("i:"+i+"j:"+j+"sum:"+sum);
