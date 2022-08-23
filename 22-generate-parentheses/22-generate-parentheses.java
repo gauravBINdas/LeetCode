@@ -4,25 +4,17 @@ class Solution {
     {
         String newFormed;
         if(l!=0||r!=0){
-            if(l==r)
-            {
-                newFormed=formed+"(";
-                makeParenthesis(l-1,r,newFormed);
+              if(l>0)
+              {
+                  newFormed=formed+"(";
+                  makeParenthesis(l-1,r,newFormed);
+              }
+              if(l!=r && r>0)
+              {
+                  newFormed=formed+")";
+                  makeParenthesis(l,r-1,newFormed);
+              }
             }
-            else
-            {
-                  if(l>0)
-                  {
-                      newFormed=formed+"(";
-                      makeParenthesis(l-1,r,newFormed);
-                  }
-                  if(r>0)
-                  {
-                      newFormed=formed+")";
-                      makeParenthesis(l,r-1,newFormed);
-                  }
-            }
-        }
         else
         {
             bucket.add(formed);
