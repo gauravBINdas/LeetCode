@@ -22,9 +22,6 @@ class Solution {
         return bucket;
     }
     public List<String> generateParenthesis(int n) {
-        String newFormed="";
-        int l=n;
-        int r=n;
-        return makeParenthesis(l,r,newFormed);
+        return makeParenthesis(n,n,"");
     }
 }
