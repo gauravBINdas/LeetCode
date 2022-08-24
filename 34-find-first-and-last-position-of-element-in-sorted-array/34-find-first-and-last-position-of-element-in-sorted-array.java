@@ -3,7 +3,7 @@ class Solution {
         int i=0;
         int j=nums.length-1;
         boolean startingFound=false,endingfound=false;
-        while(i<=j && (!endingfound||!startingFound))
+        while(i<=j && !(endingfound&&startingFound))
         {
             if(nums[i]!=target && !startingFound)
                 i++;
