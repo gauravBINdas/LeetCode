@@ -6,14 +6,7 @@ class Solution {
         int right=0;
         int k=0;
         while(left<nums1.length && right<nums2.length){
-            if(nums1[left]<nums2[right])
-            {
-                res[k++]=nums1[left++];
-            }
-            else
-            {
-                res[k++]=nums2[right++];
-            }
+            res[k++]=(nums1[left]<nums2[right])?nums1[left++]:nums2[right++];
         }
         while(right<nums2.length)
         {
